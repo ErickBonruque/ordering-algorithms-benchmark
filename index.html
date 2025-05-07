@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Algoritmos de Ordenação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comparação de Algoritmos de Ordenação</h1>
+        
+        <form id="sortForm">
+            <div class="form-group">
+                <label for="arraySize">Quantidade de números:</label>
+                <input type="number" id="arraySize" min="1" max="2000000" value="10000" required>
+                <small class="input-note">Valores entre 1 e 2.000.000</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Ordem inicial:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="arrayType" value="sorted" required><span>Ordenado</span></label>
+                    <label><input type="radio" name="arrayType" value="reversed" required><span>Invertido</span></label>
+                    <label><input type="radio" name="arrayType" value="random" checked required><span>Randômico</span></label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Selecione os algoritmos:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="algorithm" value="radixSort"><span>Radix Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="heapSort"><span>Heap Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="mergeSort"><span>Merge Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="quickSort"><span>Quick Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="bubbleSort"><span>Bubble Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="insertionSort"><span>Insertion Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="shellSort"><span>Shell Sort</span></label>
+                    <label><input type="checkbox" name="algorithm" value="selectionSort"><span>Selection Sort</span></label>
+                </div>
+            </div>
+            
+            <button type="submit" id="startBtn">Iniciar Comparação</button>
+        </form>
+        
+        <div id="results" class="hidden">
+            <h2>Resultados</h2>
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Executando algoritmos, aguarde...</p>
+                <p id="progress-info">Processando dados...</p>
+            </div>
+            <div id="resultsContainer"></div>
+            <div id="chart"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="sorting.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
